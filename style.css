@@ -1,3 +1,67 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+html, body {
+  height: 99.4%; /* Removes scroll bar*/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  border: thick double black;
+  height: 100%;
+  border-radius: 10px;
+  display: flex; /* Use flexbox for the wrapper */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: left; /* Center content horizontally */
+}
+
+.row1, .row2, .row3 {
+  width: 100%; /* Set all rows to occupy 100% width */
+  border: 1px solid black;
+  display: flex; /* Use flexbox for the rows */
+  justify-content: center; /* Center content horizontally within rows */
+ 
+}
+.row1{
+  height: 10%;
+}
+.row2{
+  height: 60%;
+}
+.row3{
+  height: 30%;
+}
+
+.city, .clock, .settings {
+  border: 2px solid red;
+  
+  padding: 1%; 
+}
+.city{
+  width: 70%;
+}
+.clock{
+  width: 20%;
+}
+.settings{
+  width: 10%;
+}
+
+.forecast, .weather {
+  border: 2px solid red;
+ padding: 1%; 
+}
+
+.forecast{
+  width: 70%;
+}
+.weather{
+  width: 30%;
+}
+
+
+.extra {
+  border: 2px solid red;
+  width: 100%;
+  padding: 1%; 
+}
