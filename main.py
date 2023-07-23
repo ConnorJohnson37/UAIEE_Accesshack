@@ -30,6 +30,9 @@ def init_data(city):
 #Here is the end of the portion that needs to be included
 
 
+
+#Choose funtions that are needed and put them in a print statement fro the vlaues that you want  
+
 def current_temp():
     '''
     Initializes data for the rest of the stuff
