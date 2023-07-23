@@ -212,4 +212,7 @@ html, body {
 	} 
 } 
 
-
+.text {
+	margin: auto;
+	width: 150px;
+}
