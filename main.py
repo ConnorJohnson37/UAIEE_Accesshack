@@ -2,30 +2,36 @@
 #Bri was here :)
 #Arj is here
 
+
+
+#From here to next comment must be included in every portion where data is needed
+
 from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-#Set input variables for call functions
-import cgi
-form = cgi.FieldStorage()
-city =  form.getvalue('entercity') #get city entered by user in index.html
-days = 7 #show 7 day forcast
-dt = '2023-07-22' #date FIXME set to today's date
-unixdt = 56 # int | Please either pass 'dt' or 'unixdt' and not both in same request. unixdt should be between today and next 14 day in Unix format. e.g. 1490227200  (optional)
-lang = 'lang_example' #language
+mkey = '49880dc5499b46fa967202042232107'
+city = 'Tucson'
 
-def init_data(): 
+def change_city(something):
+    city = str(something)
+
+def init_data(city): 
     try:
         configuration = swagger_client.Configuration()
-        configuration.api_key['key'] = mkey
+        configuration.api_key['key'] = '49880dc5499b46fa967202042232107'
         api_instance = swagger_client.APIsApi(swagger_client.ApiClient(configuration))
         return api_instance.forecast_weather(city, 7)
     except:
         print("Make sure that the City is spelled correctly. Else make sure to choose a big city nearest to you.")
 
+#Here is the end of the portion that needs to be included
+
+
+
+#Choose funtions that are needed and put them in a print statement fro the vlaues that you want  
 
 def current_temp():
     '''
