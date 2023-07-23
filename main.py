@@ -8,14 +8,6 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-#Set input variables for call functions
-import cgi
-form = cgi.FieldStorage()
-city =  form.getvalue('entercity') #get city entered by user in index.html
-days = 7 #show 7 day forcast
-dt = '2023-07-22' #date FIXME set to today's date
-unixdt = 56 # int | Please either pass 'dt' or 'unixdt' and not both in same request. unixdt should be between today and next 14 day in Unix format. e.g. 1490227200  (optional)
-lang = 'lang_example' #language
 
 def init_data(): 
     try:
