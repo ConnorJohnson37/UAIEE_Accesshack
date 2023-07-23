@@ -180,12 +180,12 @@ html, body {
 		}
 
 		.graph tbody:before {
-			content:"100%";
+			content:"100 F";
 			top:-0.6em;
 		}
 
 		.graph tbody:after {
-			content:"0%";
+			content:"0 F";
 			bottom:-0.6em;
 		}
 
@@ -224,7 +224,7 @@ html, body {
 		.graph td {
 			width:100%;
 			height:100%;
-			background:#F63;
+			background:aqua;
 			border-radius:0.5em 0.5em 0 0;
 			transition:background 0.5s;
 		}
