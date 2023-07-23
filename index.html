@@ -23,20 +23,29 @@
             <p> clock</p>
         </div>
         <div class="settings">
-            <label for="text">Select color scheme:</label>
+            <label for="text">Colors theme:</label>
             <select name="textColor" id="Color" onchange="updateCSS()">
-                <option value="default.css">Default</option>
-                <option value="update.css">Other</option>
+                <option value="1" selected="selected">Black/white</option>
+                <option value="2">Red/green</option>
+                <option value="3">Purple/yellow</option>
+                <option value="4">Blue/orange</option>
             </select>
             <script>
                 function updateCSS() {
-                    var csssheet = document.getElementByName("textColor".value);
-                    var theme = document.getElementByTagName('link')[0];
-                    if (csssheet == Default) {
+                    var e = document.getElementById("Color");
+                    var value = e.value;
+                    var text = e.options[e.selectedIndex].text;
+                    if (value == 1) {
                         theme.setAttribute('href', 'default.css')
                     }
-                    if (csssheet == Update) {
-                        theme.setAttribute('href', 'update.css')
+                    if (value == 2) {
+                        theme.setAttribute('href', 'redgreen.css')
+                    }
+                    if (value == 3) {
+                        theme.setAttribute('href', 'purple.css')
+                    }
+                    if (value == 4) {
+                        theme.setAttribute('href', 'orange.css')
                     }
                 }
             </script>
