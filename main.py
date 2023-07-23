@@ -11,6 +11,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
+import datetime
 
 mkey = '49880dc5499b46fa967202042232107'
 city = 'Tucson'
@@ -100,3 +101,7 @@ def humidity(num):
 
 if __name__ == '__main__':
     main()
+
+
+init_data(city)
+print(current_temp())
