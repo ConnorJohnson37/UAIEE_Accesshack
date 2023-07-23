@@ -2,7 +2,6 @@
 #Bri was here :)
 #Arj is here
 
-#start using library to access api
 from __future__ import print_function
 import time
 import swagger_client
@@ -14,22 +13,55 @@ import cgi
 form = cgi.FieldStorage()
 city =  form.getvalue('entercity') #get city entered by user in index.html
 days = 7 #show 7 day forcast
-dt = '2023-07-23' #date FIXME set to today's date
+dt = '2023-07-22' #date FIXME set to today's date
 unixdt = 56 # int | Please either pass 'dt' or 'unixdt' and not both in same request. unixdt should be between today and next 14 day in Unix format. e.g. 1490227200  (optional)
 lang = 'lang_example' #language
 
-#Set up API authentication using key
-configuration = swagger_client.Configuration()
-configuration.api_key['key'] = '49880dc5499b46fa967202042232107'
+def init_data(): 
+    try:
+        configuration = swagger_client.Configuration()
+        configuration.api_key['key'] = mkey
+        api_instance = swagger_client.APIsApi(swagger_client.ApiClient(configuration))
+        return api_instance.forecast_weather(city, 7)
+    except:
+        print("Make sure that the City is spelled correctly. Else make sure to choose a big city nearest to you.")
 
-api_instance = swagger_client.APIsApi(swagger_client.ApiClient(configuration)) #configure api
 
-#ALL values for all functions that can be input by a user
-qTEMP = 'Tucson' # str | Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name. Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to learn more. 
-hour = 10 # int | Must be in 24 hour. For example 5 pm should be hour=17, 6 am as hour=6  (optional)
+def current_temp():
+    '''
+    Initializes data for the rest of the stuff
+    '''
+    api_response = init_data()
+    return api_response._current.temp_f
 
-#Sets values to variables based on api call just made
-astronomy_data = api_instance.astronomy(qTEMP, dt) #astronomy. dt parameter must be on or after Jan 1, 2015
-print(astronomy_data['sunrise'])
-#forecast_data = api_instance.forecast_weather(qTEMP, days, dt=dt, unixdt=unixdt, hour=hour, lang=lang)
-#Runs into issue accessing single elements 
+def current_time():
+    '''
+    Pulls the current time
+    '''
+    return datetime.now().strftime("%H:%M:%S")
+    
+def date(num):
+    ''' 
+    INPUT a value between 0 and 6 for the day (ahead of your current day) of the month that you want to pull from. 
+    '''
+    try:
+        api_response = init_data()
+        return api_response.forecast.forecastday[num]._date, api_response.forecast.forecastday[num]._date.strftime("%m/%d/%Y")    
+    except:
+        print("Remember to print an integer from 0-6.")
+
+def forecast(num):
+    '''
+    Input a value between 0 and 6 for the day (ahead of your current day) of the month that you want to pull from. 
+    '''
+    try:
+        api_response = init_data()
+        return api_response.forecast.forecastday[6]._hour[11]._temp_f, api_response.forecast.forecastday[6]._hour[23]._temp_f     
+    except:
+        print("Remember to print an integer from 0-6.")
+
+def main():
+    pass
+
+if __name__ == '__main__':
+    main()
