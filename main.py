@@ -2,21 +2,32 @@
 #Bri was here :)
 #Arj is here
 
+
+
+#From here to next comment must be included in every portion where data is needed
+
 from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
+mkey = '49880dc5499b46fa967202042232107'
+city = 'Tucson'
 
-def init_data(): 
+def change_city(something):
+    city = str(something)
+
+def init_data(city): 
     try:
         configuration = swagger_client.Configuration()
-        configuration.api_key['key'] = mkey
+        configuration.api_key['key'] = '49880dc5499b46fa967202042232107'
         api_instance = swagger_client.APIsApi(swagger_client.ApiClient(configuration))
         return api_instance.forecast_weather(city, 7)
     except:
         print("Make sure that the City is spelled correctly. Else make sure to choose a big city nearest to you.")
+
+#Here is the end of the portion that needs to be included
 
 
 def current_temp():
