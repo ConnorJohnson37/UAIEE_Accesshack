@@ -59,15 +59,27 @@ def forecast(num):
         return api_response.forecast.forecastday[6]._hour[11]._temp_f, api_response.forecast.forecastday[6]._hour[23]._temp_f     
     except:
         print("Remember to print an integer from 0-6.")
+def wind(num):
+    '''
+    Input a value between 0 and 6 for the day (ahead of your current day) of the month that you want to pull from.
+    Returns tuple with wind direcction and speed
+    '''
+    try:
+        api_response = init_data()
+        return api_response.forecast.forecastday[6]._hour[11].wind_dir, api_response.forecast.forecastday[6]._hour[11].wind     
+    except:
+        print("Remember to print an integer from 0-6.")
 
-def main():
-    pass
+def sun_and_moon_stuff(num):
+    '''
+    Input a value between 0 and 6 for the day (ahead of your current day) of the month that you want to pull from.
+    Returns tuple with sun rise, sun set time, and moon phase
+    '''
+    try:
+        api_response = init_data()
+        return api_response.forecast.forecastday[6].astro.sunrise, testing.forecast.forecastday[6].astro.sunset, testing.forecast.forecastday[6].astro.moon_phase  
+    except:
+        print("Remember to print an integer from 0-6.")
 
 if __name__ == '__main__':
     main()
-
-#Sets values to variables based on api call just made
-astronomy_data = api_instance.astronomy(qTEMP, dt) #astronomy. dt parameter must be on or after Jan 1, 2015
-print(astronomy_data['sunrise'])
-#forecast_data = api_instance.forecast_weather(qTEMP, days, dt=dt, unixdt=unixdt, hour=hour, lang=lang)
-#Runs into issue accessing single elements 
