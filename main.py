@@ -29,7 +29,5 @@ qTEMP = 'Tucson' # str | Pass US Zipcode, UK Postcode, Canada Postalcode, IP add
 hour = 10 # int | Must be in 24 hour. For example 5 pm should be hour=17, 6 am as hour=6  (optional)
 
 #Sets values to variables based on api call just made
-astronomy_data = api_instance.astronomy(qTEMP, dt) #astronomy. dt parameter must be on or after Jan 1, 2015
-print(astronomy_data['sunrise'])
-#forecast_data = api_instance.forecast_weather(qTEMP, days, dt=dt, unixdt=unixdt, hour=hour, lang=lang)
-#Runs into issue accessing single elements 
+forecast_data = api_instance.forecast_weather(qTEMP, days, dt=dt, unixdt=unixdt, hour=hour, lang=lang)
+print(forecast_data.date)

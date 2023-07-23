@@ -20,7 +20,15 @@
             <p> clock</p>
         </div>
         <div class="settings">
-            <a href="settings.html" target="_blank">Settings Menu</a>
+            <label for="text">Select color scheme:</label>
+            <select name="textColor" id="Color" onchange="updateCSS()">
+                <option value="style.css">Default</option>
+            </select>
+            <script>
+                function updateCSS() {
+                    var stylesheet = document.getElementByName("textColor");
+                }
+            </script>
         </div>
     </div>
     <div class="row2">
