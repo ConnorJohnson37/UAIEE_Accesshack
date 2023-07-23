@@ -161,12 +161,12 @@ html, body {
 		}
 
 		.graph tbody:before {
-			content:"100%";
+			content:"100 F";
 			top:-0.6em;
 		}
 
 		.graph tbody:after {
-			content:"0%";
+			content:"0 F";
 			bottom:-0.6em;
 		}
 
