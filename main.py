@@ -81,5 +81,16 @@ def sun_and_moon_stuff(num):
     except:
         print("Remember to print an integer from 0-6.")
 
+def humidity(num):
+    '''
+    Input a value between 0 and 6 for the day (ahead of your current day) of the month that you want to pull from.
+    Returns humidity value as a string
+    '''
+    try:
+        api_response = init_data()
+        return str(testing.forecast.forecastday[6].hour[11]) + "%"
+    except:
+        print("Remember to print an integer from 0-6.")
+
 if __name__ == '__main__':
     main()
