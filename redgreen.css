@@ -170,11 +170,6 @@ html, body {
 			bottom:-0.6em;
 		}
 
-		.graph tbody:after {
-			content:"0%";
-			bottom:-0.6em;
-		}
-
 		.graph tr {
 			position:relative;
 			display:block;
