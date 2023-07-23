@@ -1,26 +1,26 @@
 html, body {
-  height: 99.4%; /* Removes scroll bar*/
+  height: 100%; /* Removes scroll bar*/
   width: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .wrapper {
-  border: thick double black;
   height: 100%;
-  border-radius: 10px;
   display: flex; /* Use flexbox for the wrapper */
   flex-direction: column; /* Stack child elements vertically */
   align-items: left; /* Center content horizontally */
+  
 }
 
 .row1, .row2, .row3 {
   width: 100%; 
-  border: 1px solid black;
+  border: 1px inset black;
   display: flex; /* Use flexbox for the rows */
   justify-content: center; /* Center content horizontally within rows */
- 
+  
 }
 .row1{
   height: 10%;
@@ -33,33 +33,43 @@ html, body {
 }
 
 .city, .clock, .settings {
-  border: 2px solid red;
+  border: 2px inset black;
   padding: 1%; 
+  border-bottom: none;
+  
 }
 .city{
   width: 70%;
+  border-right: none;
+  border-bottom: none;
 }
 .clock{
   width: 20%;
+  border-right: none;
+  border-bottom: none;
 }
 .settings{
   width: 10%;
+  border-bottom: none;
 }
 
 .forecast, .weather {
-  border: 2px solid red;
+  border: 2px inset black;
  padding: 1%; 
 }
 
 .forecast{
   width: 70%;
+  border-right: none;
+  border-bottom: none;
 }
 .weather{
   width: 30%;
+  border-bottom: none;
 }
 
 .extra {
-  border: 2px solid red;
+  border: 2px inset black;
   width: 100%;
   padding: 1%; 
 }
@@ -112,6 +122,17 @@ html, body {
 }
 /* End of Weather Highs and lows*/
 
+.cCondition{
+  height: 60%;
+  width:100%;
+}
+.cTemp{
+  height: 100%;
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  padding-top: 10%;
+}
 @supports (display:grid) {
 
 	@media (min-width:32em) {
@@ -159,12 +180,12 @@ html, body {
 		}
 
 		.graph tbody:before {
-			content:"100%";
+			content:"100 F";
 			top:-0.6em;
 		}
 
 		.graph tbody:after {
-			content:"0%";
+			content:"0 F";
 			bottom:-0.6em;
 		}
 
@@ -203,7 +224,7 @@ html, body {
 		.graph td {
 			width:100%;
 			height:100%;
-			background:#F63;
+			background:aqua;
 			border-radius:0.5em 0.5em 0 0;
 			transition:background 0.5s;
 		}
