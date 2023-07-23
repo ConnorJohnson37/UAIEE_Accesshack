@@ -4,7 +4,7 @@
 <title>HomePage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link id="theme" rel="stylesheet" type="text/css" href="default.css">
 <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 <script defer src="main.py"></script>
@@ -25,13 +25,22 @@
         <div class="settings">
             <label for="text">Select color scheme:</label>
             <select name="textColor" id="Color" onchange="updateCSS()">
-                <option value="style.css">Default</option>
+                <option value="default.css">Default</option>
+                <option value="update.css">Other</option>
             </select>
             <script>
                 function updateCSS() {
-                    var stylesheet = document.getElementByName("textColor");
+                    var csssheet = document.getElementByName("textColor".value);
+                    var theme = document.getElementByTagName('link')[0];
+                    if (csssheet == Default) {
+                        theme.setAttribute('href', 'default.css')
+                    }
+                    if (csssheet == Update) {
+                        theme.setAttribute('href', 'update.css')
+                    }
                 }
             </script>
+            <span id="myText"></span>
         </div>
     </div>
     <div class="row2">
@@ -126,7 +135,7 @@
                     <thead>
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col"><py-script>display(current_temp())</py-script></th>
+                            <th scope="col"><py-script>display(api_response._current.temp_f)</py-script></th>
                             <th scope="col"><py-script>display("Tommorow")</py-script></th>
                             <th scope="col">Today + 2</th>
                             <th scope="col">Today + 3</th>
