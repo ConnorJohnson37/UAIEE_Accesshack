@@ -23,9 +23,15 @@
             <p> clock</p>
         </div>
         <div class="settings">
-            <div class="popup" onclick="popupFunction()">Settings
-                <span class="popuptext" id="myPopup">Popup text test</span>
-            </div>
+            <label for="text">Select color scheme:</label>
+            <select name="textColor" id="Color" onchange="updateCSS()">
+                <option value="style.css">Default</option>
+            </select>
+            <script>
+                function updateCSS() {
+                    var stylesheet = document.getElementByName("textColor");
+                }
+            </script>
         </div>
     </div>
     <div class="row2">
