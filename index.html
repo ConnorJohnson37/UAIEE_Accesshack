@@ -20,14 +20,16 @@
             <p> clock</p>
         </div>
         <div class="settings">
-            <p> settings</p>
+            <div class="popup" onclick="popupFunction()">Settings
+                <span class="popuptext" id="myPopup">Popup text test</span>
+            </div>
         </div>
     </div>
     <div class="row2">
         <div class="forecast">
             <div class="fGraph">
                 <table class="graph">
-                    <caption>This weeks weather</caption>
+                    <caption>This week's weather</caption>
                     <thead>
                         <tr>
                             
@@ -99,7 +101,6 @@
                         <td>Temp</td>
                         <td>Temp</td>
                       </tr>
-                      
                   </table>
             </div>
         </div>
@@ -109,68 +110,81 @@
     </div>
     <div class="row3">
         <div class="extra">
-            <div class="extra table">
+            <div class="extrasTable">
                 <table>
-                    <tr>
-                        <th></th>
-                        <th>Today</th>
-                        <th>Today + 1</th>
-                        <th>Today + 2</th>
-                        <th>Today + 3</th>
-                        <th>Today + 4</th>
-                        <th>Today + 5</th>
-                        <th>Today + 6</th>
-                    </tr>
-                    <tr>
-                        <th>Sunrise</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                    </tr>
-                    <tr>
-                        <th>Sunset</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                        <th>Time</th>
-                    </tr>
-                    <tr>
-                        <th>Humidity</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <th>Windspeed (MPH)</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <th>Wind Direction</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                        <th>Value</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Today</th>
+                            <th scope="col">Today + 1</th>
+                            <th scope="col">Today + 2</th>
+                            <th scope="col">Today + 3</th>
+                            <th scope="col">Today + 4</th>
+                            <th scope="col">Today + 5</th>
+                            <th scope="col">Today + 6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Sunrise</th>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sunset</th>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                            <td>Time</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Humidity</th>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Windspeed (MPH)</th>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Wind Direction</th>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Moon Phase</th>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                            <td>Value</td>
+                        </tr>
                 </table>
             </div>
         </div>

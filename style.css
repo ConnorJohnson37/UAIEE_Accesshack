@@ -65,11 +65,12 @@ html, body {
   padding: 1%; 
 }
 
-.fGraph{ /*Forcast graph*/
+.fGraph{ /*Forecast graph*/
   width: 100%;
   height:70%;
 }
-.fTable{ /*Forcast Data Table*/
+
+.fTable { /*Forcast Data Table*/
   width: 200%;
   height: 30%;
 }
@@ -97,7 +98,7 @@ html, body {
   width: 50%;
 }
 
-.fTable td, .fTable th {
+.fTable td, .fTable th, .extrasTable td, .extrasTable th {
   border: 1px solid #999;
   
 }
@@ -111,6 +112,22 @@ html, body {
   color: black;
 }
 /* End of Weather Highs and lows*/
+
+/* Additions for extras table */
+.extrasTable table {
+	text-align: left;
+	position: relative;
+	border-collapse: collapse; 
+	background-color: #f6f6f6;
+	width: 100%;
+}
+
+.extrasTable {
+	width: 100%;
+	height: 30%;
+}
+
+/* End of additions for extras */
 
 @supports (display:grid) {
 
